@@ -117,8 +117,8 @@ begin
     
     
       when (SendAlberto) => 
-        state <= WaitBf;
         if(currentEnd < 41) then
+            state <= WaitBf;
             nextState <= SendAlberto;
             dispOut <= "01" & alberto(0 to 5);
             alberto <= alberto(6 to 41) & "000000";
@@ -151,8 +151,8 @@ begin
         enable <= '1';
         
       when (SendDaniel) => 
-        state <= WaitBf;
         if(currentEnd < 35) then
+            state <= WaitBf;
             nextState <= SendDaniel;
             dispOut <= "01" & daniel(0 to 5);
             daniel <= daniel(6 to 35) & "000000";
