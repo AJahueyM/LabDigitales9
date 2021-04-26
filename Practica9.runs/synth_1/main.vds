@@ -1,0 +1,382 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Apr 26 14:16:47 2021
+# Process ID: 11216
+# Current directory: C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.runs/synth_1
+# Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.runs/synth_1/main.vds
+# Journal file: C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source main.tcl -notrace
+Command: synth_design -top main -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7504 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 357.211 ; gain = 97.969
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'main' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:44]
+WARNING: [Synth 8-614] signal 'state' is read in the process but is not in the sensitivity list [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:54]
+WARNING: [Synth 8-614] signal 'alberto' is read in the process but is not in the sensitivity list [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:54]
+WARNING: [Synth 8-614] signal 'daniel' is read in the process but is not in the sensitivity list [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:54]
+WARNING: [Synth 8-614] signal 'nextState' is read in the process but is not in the sensitivity list [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:54]
+WARNING: [Synth 8-614] signal 'dispOut' is read in the process but is not in the sensitivity list [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'main' (1#1) [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:44]
+WARNING: [Synth 8-3331] design main has unconnected port clk
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 412.512 ; gain = 153.270
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 412.512 ; gain = 153.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 412.512 ; gain = 153.270
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/constrs_1/new/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 727.016 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 727.016 ; gain = 467.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 727.016 ; gain = 467.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 727.016 ; gain = 467.773
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'dispOut_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:73]
+WARNING: [Synth 8-327] inferring latch for variable 'rs_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:71]
+WARNING: [Synth 8-327] inferring latch for variable 'rw_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:72]
+WARNING: [Synth 8-327] inferring latch for variable 'enable_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:74]
+WARNING: [Synth 8-327] inferring latch for variable 'alberto_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'daniel_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:157]
+WARNING: [Synth 8-327] inferring latch for variable 'state_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:61]
+WARNING: [Synth 8-327] inferring latch for variable 'currentEnd_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'nextState_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:64]
+WARNING: [Synth 8-327] inferring latch for variable 'timer_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:170]
+WARNING: [Synth 8-327] inferring latch for variable 'timeToWait_reg' [C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd:65]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 727.016 ; gain = 467.773
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Muxes : 
+	  15 Input     32 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 3     
+	  15 Input      4 Bit        Muxes := 1     
+	  17 Input      4 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 13    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module main 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Muxes : 
+	  15 Input     32 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 3     
+	  15 Input      4 Bit        Muxes := 1     
+	  17 Input      4 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 13    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design main has unconnected port clk
+INFO: [Synth 8-3886] merging instance 'alberto_reg[41]' (LD) to 'alberto_reg[38]'
+INFO: [Synth 8-3886] merging instance 'alberto_reg[40]' (LD) to 'alberto_reg[38]'
+INFO: [Synth 8-3886] merging instance 'alberto_reg[39]' (LD) to 'alberto_reg[38]'
+INFO: [Synth 8-3886] merging instance 'alberto_reg[37]' (LD) to 'alberto_reg[36]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\alberto_reg[36] )
+INFO: [Synth 8-3886] merging instance 'daniel_reg[35]' (LD) to 'daniel_reg[30]'
+INFO: [Synth 8-3886] merging instance 'alberto_reg[35]' (LD) to 'alberto_reg[34]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[34]' (LD) to 'daniel_reg[30]'
+INFO: [Synth 8-3886] merging instance 'alberto_reg[34]' (LD) to 'alberto_reg[32]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[33]' (LD) to 'daniel_reg[32]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[31]' (LD) to 'daniel_reg[30]'
+INFO: [Synth 8-3886] merging instance 'alberto_reg[31]' (LD) to 'alberto_reg[38]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\daniel_reg[30] )
+INFO: [Synth 8-3886] merging instance 'alberto_reg[30]' (LD) to 'alberto_reg[36]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[29]' (LD) to 'daniel_reg[32]'
+INFO: [Synth 8-3886] merging instance 'alberto_reg[29]' (LD) to 'alberto_reg[26]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[28]' (LD) to 'daniel_reg[24]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[27]' (LD) to 'daniel_reg[23]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[25]' (LD) to 'daniel_reg[24]'
+INFO: [Synth 8-3886] merging instance 'alberto_reg[25]' (LD) to 'alberto_reg[33]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[24]' (LD) to 'daniel_reg[30]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[22]' (LD) to 'daniel_reg[18]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[21]' (LD) to 'daniel_reg[17]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[19]' (LD) to 'daniel_reg[18]'
+INFO: [Synth 8-3886] merging instance 'alberto_reg[19]' (LD) to 'alberto_reg[27]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[15]' (LD) to 'daniel_reg[11]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[13]' (LD) to 'daniel_reg[12]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[9]' (LD) to 'daniel_reg[5]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[7]' (LD) to 'daniel_reg[6]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[0]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[1]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[2]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[3]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[4]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[5]' (LD) to 'timeToWait_reg[10]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[6]' (LD) to 'timeToWait_reg[16]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[7]' (LD) to 'timeToWait_reg[8]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[8]' (LD) to 'timeToWait_reg[13]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[9]' (LD) to 'timeToWait_reg[14]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[12]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[13]' (LD) to 'timeToWait_reg[21]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[15]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[16]' (LD) to 'timeToWait_reg[19]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[17]' (LD) to 'timeToWait_reg[18]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[20]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[22]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[23]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[24]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[25]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[26]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[27]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[28]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[29]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3886] merging instance 'timeToWait_reg[30]' (LD) to 'timeToWait_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\timeToWait_reg[31] )
+INFO: [Synth 8-3886] merging instance 'daniel_reg[1]' (LD) to 'daniel_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\alberto_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\daniel_reg[30] )
+INFO: [Synth 8-3886] merging instance 'alberto_reg[24]' (LD) to 'alberto_reg[36]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[18]' (LD) to 'daniel_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\alberto_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\daniel_reg[30] )
+INFO: [Synth 8-3886] merging instance 'alberto_reg[18]' (LD) to 'alberto_reg[36]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[16]' (LD) to 'daniel_reg[32]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[12]' (LD) to 'daniel_reg[30]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[10]' (LD) to 'daniel_reg[26]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\alberto_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\daniel_reg[30] )
+INFO: [Synth 8-3886] merging instance 'alberto_reg[12]' (LD) to 'alberto_reg[36]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[6]' (LD) to 'daniel_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\alberto_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\daniel_reg[30] )
+INFO: [Synth 8-3886] merging instance 'alberto_reg[6]' (LD) to 'alberto_reg[36]'
+INFO: [Synth 8-3886] merging instance 'daniel_reg[0]' (LD) to 'daniel_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\alberto_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\daniel_reg[30] )
+INFO: [Synth 8-3886] merging instance 'alberto_reg[0]' (LD) to 'alberto_reg[36]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\alberto_reg[36] )
+WARNING: [Synth 8-3332] Sequential element (alberto_reg[36]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (daniel_reg[30]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (timeToWait_reg[31]) is unused and will be removed from module main.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 727.016 ; gain = 467.773
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 753.684 ; gain = 494.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 753.832 ; gain = 494.590
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 754.504 ; gain = 495.262
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 755.539 ; gain = 496.297
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 755.539 ; gain = 496.297
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 755.539 ; gain = 496.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 755.539 ; gain = 496.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 755.539 ; gain = 496.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 755.539 ; gain = 496.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    32|
+|3     |LUT1   |     6|
+|4     |LUT2   |    84|
+|5     |LUT3   |    41|
+|6     |LUT4   |    48|
+|7     |LUT5   |     7|
+|8     |LUT6   |    13|
+|9     |LD     |   126|
+|10    |OBUF   |    11|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   370|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 755.539 ; gain = 496.297
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 755.543 ; gain = 181.797
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 755.543 ; gain = 496.301
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 158 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 126 instances were transformed.
+  LD => LDCE: 126 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+92 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 771.563 ; gain = 525.141
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.runs/synth_1/main.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 771.563 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 26 14:17:18 2021...

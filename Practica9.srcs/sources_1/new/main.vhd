@@ -42,19 +42,20 @@ entity main is
 end main;
 
 architecture Behavioral of main is
-    type DISP_STATE is (PowerUp, Init1, Init2, Init3, InitConfig1, InitConfig2, InitConfig3, SendAlberto, InitL2, Pos1_L2, SendDaniel, WaitTime, WaitBF);
+    type DISP_STATE is (PowerUp, Init1, Init2, Init3, InitConfig1, InitConfig2, InitConfig3, SendAlberto, InitL2, Pos1_L2, SendDaniel, WaitTime, WaitBF, Idle);
     signal state : DISP_STATE := PowerUp;
     signal nextState: DISP_STATE := PowerUp;
     
-    signal daniel : std_logic_vector(0 to 35) := "000100000001001110001001000101001100"; --Grupos de 6 bits
     signal alberto : std_logic_vector(0 to 41) := "000001001100000010000101010010010100001111"; --Grupos de 6 bits
+    signal daniel : std_logic_vector(0 to 35) := "000100000001001110001001000101001100"; --Grupos de 6 bits
 
 begin
 
 process(clk)
 variable timer : integer := 0;
 variable timeToWait: integer := 0;
-
+variable currentStart : integer := 0;
+variable currentEnd : integer := 5;
 
 begin
     case(state) is
@@ -116,13 +117,54 @@ begin
     
     
       when (SendAlberto) => 
+        state <= WaitBf;
+        if(currentEnd < 41) then
+            nextState <= SendAlberto;
+            dispOut <= "01" & alberto(0 to 5);
+            alberto <= alberto(6 to 41) & "000000";
+            rs <= '1';
+            rw <= '0';
+            enable <= '1';
+            currentStart := currentEnd + 1;
+            currentEnd := currentEnd + 6;
+        else
+            currentStart := 0;
+            currentEnd := 5;
+            nextState <= InitL2; 
+        end if;
        
+        
       when (InitL2) =>
+        state <= WaitBF;
+        nextState <= Pos1_L2;
+        dispOut <= "00111000";
+        rs <= '0';
+        rw <= '0';
+        enable <= '1';
         
       when (Pos1_L2) =>
-
+        state <= WaitBF;
+        nextState <= SendDaniel;
+        dispOut <= "11000000";
+        rs <= '0';
+        rw <= '0';
+        enable <= '1';
+        
       when (SendDaniel) => 
-
+        state <= WaitBf;
+        if(currentEnd < 35) then
+            nextState <= SendDaniel;
+            dispOut <= "01" & daniel(0 to 5);
+            daniel <= daniel(6 to 35) & "000000";
+            rs <= '1';
+            rw <= '0';
+            enable <= '1';
+            currentStart := currentEnd + 1;
+            currentEnd := currentEnd + 6;
+        else
+            nextState <= Idle; 
+        end if;
+        
       when(WaitTime) =>
         enable <= '0';
         timer := timer + 1;
@@ -141,7 +183,8 @@ begin
             state <= nextState;
             timer := 0;
         end if;        
-
+      when(Idle) => 
+        
       end case;
 
 end process;
