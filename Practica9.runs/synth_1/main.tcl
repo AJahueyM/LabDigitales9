@@ -17,21 +17,22 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.incrementalSynthesisCache C:/Users/A01039835/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15252-MTYA7435-01/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.cache/wt [current_project]
-set_property parent.project_path C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.cache/wt [current_project]
+set_property parent.project_path C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.cache/ip [current_project]
+set_property ip_output_repo c:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/sources_1/new/main.vhd
+read_vhdl -library xil_defaultlib {
+  C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.srcs/sources_1/new/lcd_controller.vhd
+  C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.srcs/sources_1/new/main.vhd
+}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -40,8 +41,8 @@ read_vhdl -library xil_defaultlib C:/Users/A01039835/Documents/GitHub/LabDigital
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/constrs_1/new/constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/constrs_1/new/constraints.xdc]
+read_xdc C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.srcs/constrs_1/new/constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]

@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity main is
  Port (
-    dispOut : inout  std_logic_vector(7 downto 0);
+    dispOut : out  std_logic_vector(7 downto 0);
     rs : out std_logic;
     rw : out std_logic;
     enable : out std_logic;
@@ -41,152 +41,57 @@ entity main is
  );
 end main;
 
-architecture Behavioral of main is
-    type DISP_STATE is (PowerUp, Init1, Init2, Init3, InitConfig1, InitConfig2, InitConfig3, SendAlberto, InitL2, Pos1_L2, SendDaniel, WaitTime, WaitBF, Idle);
-    signal state : DISP_STATE := PowerUp;
-    signal nextState: DISP_STATE := PowerUp;
-    
-    signal alberto : std_logic_vector(0 to 41) := "000001001100000010000101010010010100001111"; --Grupos de 6 bits
-    signal daniel : std_logic_vector(0 to 35) := "000100000001001110001001000101001100"; --Grupos de 6 bits
+ARCHITECTURE behavior OF main IS
+  SIGNAL   lcd_enable : STD_LOGIC;
+  SIGNAL   lcd_bus    : STD_LOGIC_VECTOR(9 DOWNTO 0);
+  SIGNAL   lcd_busy   : STD_LOGIC;
+  COMPONENT lcd_controller IS
+    PORT(
+       clk        : IN  STD_LOGIC; --system clock
+       reset_n    : IN  STD_LOGIC; --active low reinitializes lcd
+       lcd_enable : IN  STD_LOGIC; --latches data into lcd controller
+       lcd_bus    : IN  STD_LOGIC_VECTOR(9 DOWNTO 0); --data and control signals
+       busy       : OUT STD_LOGIC; --lcd controller busy/idle feedback
+       rw, rs, e  : OUT STD_LOGIC; --read/write, setup/data, and enable for lcd
+       lcd_data   : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)); --data signals for lcd
+  END COMPONENT;
+BEGIN
 
-begin
-
-process(clk)
-variable timer : integer := 0;
-variable timeToWait: integer := 0;
-variable currentStart : integer := 0;
-variable currentEnd : integer := 5;
-
-begin
-    case(state) is
-      when(PowerUp) => 
-        state <= WaitTime;
-        nextState <= Init1;
-        timeToWait := 2500000; -- 25 ms
-      
-      when(Init1) => 
-        state <= WaitTime;
-        nextState <= Init2;
-        timeToWait := 1000000; -- 10 ms
-        rs <= '0';
-        rw <= '0';
-        dispOut <= "00111100";
-        enable <= '1';
-        
-      when(Init2) => 
-        state <= WaitTime;
-        nextState <= Init3;
-        timeToWait := 20000; -- 200 microsegundos
-        rs <= '0';
-        rw <= '0';
-        dispOut <= "00111100";
-        enable <= '1';
-        
-      when(Init3) => 
-        state <= WaitTime;
-        nextState <= InitConfig1;
-        timeToWait := 20000; -- 200 microsegundos
-        rs <= '0';
-        rw <= '0';
-        dispOut <= "00111100";        
-        enable <= '1';
-      
-      when(InitConfig1) =>
-        state <= WaitBF;
-        nextState <= InitConfig2;
-        dispOut <= "00001111";
-        rs <= '0';
-        rw <= '0';
-        enable <= '1';
-        
-      when(InitConfig2) =>
-        state <= WaitBF;
-        nextState <= InitConfig3;
-        dispOut <= "00000001";
-        rs <= '0';
-        rw <= '0';
-        enable <= '1';
-
-      when(InitConfig3) =>
-        state <= WaitBF;
-        nextState <= SendAlberto;
-        dispOut <= "00000111";
-        rs <= '0';
-        rw <= '0';
-        enable <= '1';
-    
-    
-      when (SendAlberto) => 
-        if(currentEnd < 41) then
-            state <= WaitBf;
-            nextState <= SendAlberto;
-            dispOut <= "01" & alberto(0 to 5);
-            alberto <= alberto(6 to 41) & "000000";
-            rs <= '1';
-            rw <= '0';
-            enable <= '1';
-            currentStart := currentEnd + 1;
-            currentEnd := currentEnd + 6;
-        else
-            currentStart := 0;
-            currentEnd := 5;
-            nextState <= InitL2; 
-        end if;
-       
-        
-      when (InitL2) =>
-        state <= WaitBF;
-        nextState <= Pos1_L2;
-        dispOut <= "00111000";
-        rs <= '0';
-        rw <= '0';
-        enable <= '1';
-        
-      when (Pos1_L2) =>
-        state <= WaitBF;
-        nextState <= SendDaniel;
-        dispOut <= "11000000";
-        rs <= '0';
-        rw <= '0';
-        enable <= '1';
-        
-      when (SendDaniel) => 
-        if(currentEnd < 35) then
-            state <= WaitBf;
-            nextState <= SendDaniel;
-            dispOut <= "01" & daniel(0 to 5);
-            daniel <= daniel(6 to 35) & "000000";
-            rs <= '1';
-            rw <= '0';
-            enable <= '1';
-            currentStart := currentEnd + 1;
-            currentEnd := currentEnd + 6;
-        else
-            nextState <= Idle; 
-        end if;
-        
-      when(WaitTime) =>
-        enable <= '0';
-        timer := timer + 1;
-        if(timer > timeToWait) then
-            state <= nextState;
-            timer := 0;
-        end if;
-        
-      when(WaitBF) => 
-        timer := timer + 1;
-        enable <= '0';
-        rs <= '0';
-        rw <= '1';
-        
-        if(dispOut(7) = '0' and timer > 500000) then
-            state <= nextState;
-            timer := 0;
-        end if;        
-      when(Idle) => 
-        
-      end case;
-
-end process;
-    
-end Behavioral;
+  --instantiate the lcd controller
+  dut: lcd_controller
+    PORT MAP(clk => clk, reset_n => '1', lcd_enable => lcd_enable, lcd_bus => lcd_bus, 
+             busy => lcd_busy, rw => rw, rs => rs, e => enable, lcd_data => dispOut);
+  
+  PROCESS(clk)
+    VARIABLE char  :  INTEGER RANGE 0 TO 16 := 0;
+  BEGIN
+    IF(clk'EVENT AND clk = '1') THEN
+      IF(lcd_busy = '0' AND lcd_enable = '0') THEN
+        lcd_enable <= '1';
+        IF(char < 16) THEN
+          char := char + 1;
+        END IF;
+        CASE char IS
+          WHEN 1 => lcd_bus <= "1001000001"; -- A
+          WHEN 2 => lcd_bus <= "1001001100"; -- L
+          WHEN 3 => lcd_bus <= "1001000010"; -- B
+          WHEN 4 => lcd_bus <= "1001000101"; -- E
+          WHEN 5 => lcd_bus <= "1001010010"; -- R
+          WHEN 6 => lcd_bus <= "1001010100"; -- T
+          WHEN 7 => lcd_bus <= "1001001111"; -- O
+          WHEN 8 => lcd_bus <= "0011000000"; -- Cambiar línea
+          WHEN 9 => lcd_bus <= "1001000100"; -- D
+          WHEN 10 => lcd_bus <= "1001000001"; -- A
+          WHEN 12 => lcd_bus <= "1001001110"; -- N
+          WHEN 13 => lcd_bus <= "1001001001"; -- I
+          WHEN 14 => lcd_bus <= "1001000101"; -- E
+          WHEN 15 => lcd_bus <= "1001001100"; -- L
+          WHEN OTHERS => lcd_enable <= '0';
+        END CASE;
+      ELSE
+        lcd_enable <= '0';
+      END IF;
+    END IF;
+  END PROCESS;
+  
+END behavior;

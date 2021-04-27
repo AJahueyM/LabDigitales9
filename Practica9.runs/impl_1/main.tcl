@@ -60,23 +60,21 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param synth.incrementalSynthesisCache C:/Users/A01039835/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15252-MTYA7435-01/incrSyn
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.cache/wt [current_project]
-  set_property parent.project_path C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.xpr [current_project]
-  set_property ip_output_repo C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.cache/wt [current_project]
+  set_property parent.project_path C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.xpr [current_project]
+  set_property ip_output_repo C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.runs/synth_1/main.dcp
-  read_xdc C:/Users/A01039835/Documents/GitHub/LabDigitales9/Practica9.srcs/constrs_1/new/constraints.xdc
+  add_files -quiet C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.runs/synth_1/main.dcp
+  read_xdc C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.srcs/constrs_1/new/constraints.xdc
   link_design -top main -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
