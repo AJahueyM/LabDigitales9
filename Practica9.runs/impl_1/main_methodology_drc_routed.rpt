@@ -1,13 +1,13 @@
-Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-| Date         : Tue Apr 27 14:43:58 2021
-| Host         : MTYA7435-08 running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon May 24 19:45:45 2021
+| Host         : DESKTOP-DOV70PO running 64-bit major release  (build 9200)
 | Command      : report_methodology -file main_methodology_drc_routed.rpt -pb main_methodology_drc_routed.pb -rpx main_methodology_drc_routed.rpx
 | Design       : main
 | Device       : xc7a100tcsg324-1
 | Speed File   : -1
-| Design State : Routed
+| Design State : Fully Routed
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 Report Methodology
@@ -24,300 +24,300 @@ Table of Contents
       Design limits: <entire design considered>
              Max violations: <unlimited>
              Violations found: 58
-+-----------+----------+-----------------------------+------------+
-| Rule      | Severity | Description                 | Violations |
-+-----------+----------+-----------------------------+------------+
-| TIMING-17 | Warning  | Non-clocked sequential cell | 58         |
-+-----------+----------+-----------------------------+------------+
++-----------+------------------+-----------------------------+------------+
+| Rule      | Severity         | Description                 | Violations |
++-----------+------------------+-----------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell | 58         |
++-----------+------------------+-----------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-TIMING-17#1 Warning
+TIMING-17#1 Critical Warning
 Non-clocked sequential cell  
 The clock pin char_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#2 Warning
+TIMING-17#2 Critical Warning
 Non-clocked sequential cell  
 The clock pin char_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#3 Warning
+TIMING-17#3 Critical Warning
 Non-clocked sequential cell  
 The clock pin char_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#4 Warning
+TIMING-17#4 Critical Warning
 Non-clocked sequential cell  
 The clock pin char_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#5 Warning
+TIMING-17#5 Critical Warning
 Non-clocked sequential cell  
 The clock pin char_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#6 Warning
+TIMING-17#6 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/FSM_sequential_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#7 Warning
+TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/FSM_sequential_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#8 Warning
+TIMING-17#8 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/busy_reg/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#9 Warning
+TIMING-17#9 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#10 Warning
+TIMING-17#10 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#11 Warning
+TIMING-17#11 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#12 Warning
+TIMING-17#12 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#13 Warning
+TIMING-17#13 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#14 Warning
+TIMING-17#14 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#15 Warning
+TIMING-17#15 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#16 Warning
+TIMING-17#16 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#17 Warning
+TIMING-17#17 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#18 Warning
+TIMING-17#18 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#19 Warning
+TIMING-17#19 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#20 Warning
+TIMING-17#20 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#21 Warning
+TIMING-17#21 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#22 Warning
+TIMING-17#22 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#23 Warning
+TIMING-17#23 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#24 Warning
+TIMING-17#24 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#25 Warning
+TIMING-17#25 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#26 Warning
+TIMING-17#26 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#27 Warning
+TIMING-17#27 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#28 Warning
+TIMING-17#28 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#29 Warning
+TIMING-17#29 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#30 Warning
+TIMING-17#30 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#31 Warning
+TIMING-17#31 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#32 Warning
+TIMING-17#32 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#33 Warning
+TIMING-17#33 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[31]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#34 Warning
+TIMING-17#34 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#35 Warning
+TIMING-17#35 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#36 Warning
+TIMING-17#36 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#37 Warning
+TIMING-17#37 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#38 Warning
+TIMING-17#38 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#39 Warning
+TIMING-17#39 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#40 Warning
+TIMING-17#40 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/clk_count_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#41 Warning
+TIMING-17#41 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/e_reg/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#42 Warning
+TIMING-17#42 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/lcd_data_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#43 Warning
+TIMING-17#43 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/lcd_data_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#44 Warning
+TIMING-17#44 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/lcd_data_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#45 Warning
+TIMING-17#45 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/lcd_data_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#46 Warning
+TIMING-17#46 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/lcd_data_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#47 Warning
+TIMING-17#47 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/lcd_data_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#48 Warning
+TIMING-17#48 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/lcd_data_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#49 Warning
+TIMING-17#49 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/lcd_data_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#50 Warning
+TIMING-17#50 Critical Warning
 Non-clocked sequential cell  
 The clock pin dut/rs_reg/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#51 Warning
+TIMING-17#51 Critical Warning
 Non-clocked sequential cell  
 The clock pin lcd_bus_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#52 Warning
+TIMING-17#52 Critical Warning
 Non-clocked sequential cell  
 The clock pin lcd_bus_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#53 Warning
+TIMING-17#53 Critical Warning
 Non-clocked sequential cell  
 The clock pin lcd_bus_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#54 Warning
+TIMING-17#54 Critical Warning
 Non-clocked sequential cell  
 The clock pin lcd_bus_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#55 Warning
+TIMING-17#55 Critical Warning
 Non-clocked sequential cell  
 The clock pin lcd_bus_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#56 Warning
+TIMING-17#56 Critical Warning
 Non-clocked sequential cell  
 The clock pin lcd_bus_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#57 Warning
+TIMING-17#57 Critical Warning
 Non-clocked sequential cell  
 The clock pin lcd_bus_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#58 Warning
+TIMING-17#58 Critical Warning
 Non-clocked sequential cell  
 The clock pin lcd_enable_reg/C is not reached by a timing clock
 Related violations: <none>

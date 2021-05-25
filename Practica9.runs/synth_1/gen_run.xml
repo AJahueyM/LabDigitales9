@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1619552529">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1621903443">
   <File Type="PA-TCL" Name="main.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="main_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="main_reports.tcl"/>
@@ -9,7 +9,7 @@
   <File Type="RDS-DCP" Name="main.dcp"/>
   <File Type="VDS-TIMINGSUMMARY" Name="main_timing_summary_synth.rpt"/>
   <File Type="VDS-TIMING-PB" Name="main_timing_summary_synth.pb"/>
-  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/lcd_controller.vhd">
       <FileInfo>
@@ -40,6 +40,12 @@
     <Config>
       <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/constraints.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">

@@ -1,12 +1,12 @@
-Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
---------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-| Date         : Tue Apr 27 14:43:28 2021
-| Host         : MTYA7435-08 running 64-bit major release  (build 9200)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon May 24 19:45:17 2021
+| Host         : DESKTOP-DOV70PO running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
 | Device       : xc7a100t
---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 
 Control Set Information
 
@@ -23,23 +23,33 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     7 |
-| Unused register locations in slices containing registers |    20 |
+| Total control sets                                       |     7 |
+|    Minimum number of control sets                        |     7 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    22 |
 +----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
 
 
 2. Histogram
 ------------
 
-+--------+--------------+
-| Fanout | Control Sets |
-+--------+--------------+
-|      2 |            2 |
-|      8 |            1 |
-|     10 |            1 |
-|     14 |            1 |
-|    16+ |            2 |
-+--------+--------------+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |     7 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     1 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
 
 
 3. Flip-Flop Distribution
@@ -48,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               8 |            3 |
+| No           | No                    | No                     |               4 |            1 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              64 |            9 |
-| Yes          | No                    | No                     |              44 |            7 |
+| No           | Yes                   | No                     |              32 |           11 |
+| Yes          | No                    | No                     |              22 |            7 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -60,16 +70,16 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+-------------------------+---------------------------+------------------+----------------+
-|  Clock Signal  |      Enable Signal      |      Set/Reset Signal     | Slice Load Count | Bel Load Count |
-+----------------+-------------------------+---------------------------+------------------+----------------+
-|  clk_IBUF_BUFG | dut/rs_i_1_n_0          |                           |                1 |              2 |
-|  clk_IBUF_BUFG | dut/e_i_1_n_0           |                           |                1 |              2 |
-|  clk_IBUF_BUFG |                         |                           |                3 |              8 |
-|  clk_IBUF_BUFG | dut/char_reg[0][0]      |                           |                1 |             10 |
-|  clk_IBUF_BUFG | dut/E[0]                |                           |                1 |             14 |
-|  clk_IBUF_BUFG | dut/lcd_data[7]_i_1_n_0 |                           |                3 |             16 |
-|  clk_IBUF_BUFG |                         | dut/clk_count[31]_i_1_n_0 |                9 |             64 |
-+----------------+-------------------------+---------------------------+------------------+----------------+
++----------------+-------------------------+------------------+------------------+----------------+--------------+
+|  Clock Signal  |      Enable Signal      | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-------------------------+------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | dut/e_i_1_n_0           |                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | dut/rs_i_1_n_0          |                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG |                         |                  |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | dut/busy_reg_0[0]       |                  |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | dut/E[0]                |                  |                1 |              7 |         7.00 |
+|  clk_IBUF_BUFG | dut/lcd_data[7]_i_1_n_0 |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG |                         | dut/clk_count0   |               11 |             32 |         2.91 |
++----------------+-------------------------+------------------+------------------+----------------+--------------+
 
 

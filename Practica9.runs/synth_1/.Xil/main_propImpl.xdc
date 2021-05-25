@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.srcs/constrs_1/new/constraints.xdc rfile:../../../Practica9.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/alber/Documents/Gits/LabDigitales9/Practica9.srcs/constrs_1/new/constraints.xdc rfile:../../../Practica9.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN G18 [get_ports {dispOut[7]}]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]

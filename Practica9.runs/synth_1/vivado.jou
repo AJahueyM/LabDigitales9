@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2018.2.2 (64-bit)
-# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
-# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
-# Start of session at: Tue Apr 27 14:42:13 2021
-# Process ID: 8504
-# Current directory: C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.runs/synth_1
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon May 24 19:44:06 2021
+# Process ID: 3840
+# Current directory: C:/Users/alber/Documents/Gits/LabDigitales9/Practica9.runs/synth_1
 # Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
-# Log file: C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.runs/synth_1/main.vds
-# Journal file: C:/Users/L03068681/Contacts/Desktop/LabDigitales9-main/LabDigitales9-main/Practica9.runs/synth_1\vivado.jou
+# Log file: C:/Users/alber/Documents/Gits/LabDigitales9/Practica9.runs/synth_1/main.vds
+# Journal file: C:/Users/alber/Documents/Gits/LabDigitales9/Practica9.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source main.tcl -notrace
